@@ -12,6 +12,13 @@ public class DemoApplication {
 		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
 //		Outfit outfit = new Bikini();
+		/**
+		 * Run application
+		 * Create container (SpringApplication.run(DemoApplication.class, args))
+		 * Find dependentcy and inject to container
+		 * container = ApplicationContext
+		 * depentdency = Bean (Component)
+		 */
 		Outfit outfit = context.getBean(Outfit.class);
 
 		System.out.println("Instance: " + outfit);
