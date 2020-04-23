@@ -15,16 +15,27 @@ public class DemoApplication {
 		/**
 		 * Run application
 		 * Create container (SpringApplication.run(DemoApplication.class, args))
-		 * Find dependentcy and inject to container
+		 * Find dependentcy and store to container
 		 * container = ApplicationContext
 		 * depentdency = Bean (Component)
-		 * @Component (new Bikini()) inject to ApplicationContext.
+		 * @Component (new Bikini()) store to ApplicationContext.
 		 */
 		Outfit outfit = context.getBean(Outfit.class);
 
 		System.out.println("Instance: " + outfit);
 
 		outfit.wear();
+
+		/**
+		 * @Autowired inject instance of Outfit into constructor Girl.
+		 */
+		Girl girl = context.getBean(Girl.class);
+
+		System.out.println("Girl instance: " + girl);
+
+		System.out.println("Girl outfit: " + girl.getOutfit());
+
+		girl.getOutfit().wear();
 
 	}
 }
