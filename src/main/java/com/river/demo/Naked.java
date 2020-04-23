@@ -3,7 +3,7 @@ package com.river.demo;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("naked")
 @Primary
 public class Naked implements Outfit {
     @Override

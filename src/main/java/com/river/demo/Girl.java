@@ -1,6 +1,7 @@
 package com.river.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +11,7 @@ import javax.annotation.PreDestroy;
 public class Girl {
 
     @Autowired
+    @Qualifier("bikini")
     private Outfit outfit;
 
     @PostConstruct
