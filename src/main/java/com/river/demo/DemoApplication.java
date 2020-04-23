@@ -1,11 +1,14 @@
 package com.river.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
+@EnableConfigurationProperties
 public class DemoApplication {
 
 	public static void main(String[] args) {
@@ -63,5 +66,14 @@ public class DemoApplication {
 		//Demo @Bean (difference @Component)
 		SimpleBean simpleBean = context.getBean(SimpleBean.class);
 		System.out.println("Simple Bean Example: "+simpleBean.toString());
+
+		//Can replace by @Autowire in difference class
+		RiverAppProperties riverAppProperties = context.getBean(RiverAppProperties.class);
+		System.out.println("Global variable:");
+		System.out.println("\t Email: " + riverAppProperties.getEmail());
+		System.out.println("\t GA ID: " + riverAppProperties.getGoogleAnalyticsId());
+		System.out.println("\t Authors: " + riverAppProperties.getAuthors());
+		System.out.println("\t Example Map: " + riverAppProperties.getExampleMap());
+
 	}
 }
