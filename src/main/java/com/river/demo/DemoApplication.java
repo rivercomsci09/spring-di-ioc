@@ -18,6 +18,7 @@ public class DemoApplication {
 		 * Find dependentcy and inject to container
 		 * container = ApplicationContext
 		 * depentdency = Bean (Component)
+		 * @Component (new Bikini()) inject to ApplicationContext.
 		 */
 		Outfit outfit = context.getBean(Outfit.class);
 
