@@ -53,5 +53,15 @@ public class DemoApplication {
 //		System.out.println("After IoC Container destroy Girl");
 //		((ConfigurableApplicationContext) context).getBeanFactory().destroyBean(girl);
 //		System.out.println("Before IoC Container destroy Girl");
+
+		/**
+		 * Annotation @Configuration
+		 * SpringBoot in the first run: find Component + find class Configuration
+		 * Create instance of class is marked @Configuration
+		 * Store Bean to context
+		 */
+		//Demo @Bean (difference @Component)
+		SimpleBean simpleBean = context.getBean(SimpleBean.class);
+		System.out.println("Simple Bean Example: "+simpleBean.toString());
 	}
 }
